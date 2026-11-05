@@ -1,0 +1,58 @@
+*{box-sizing:border-box}
+:root{--blue:#1748c8;--blue-dark:#0b2d91;--paper:#f1efdc;--ink:#182b66;--green:#2f7548;--line:#a8b8ec}
+html{scroll-behavior:smooth}
+body{margin:0;background-color:var(--paper);background-image:radial-gradient(rgba(29,64,155,.10) .7px,transparent .7px);background-size:5px 5px;color:var(--ink);font-family:"VT323",monospace;font-size:22px;padding-bottom:62px;overflow-x:hidden}
+button,a{font:inherit}
+button{cursor:pointer}
+.scanlines{position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.12;background:repeating-linear-gradient(to bottom,transparent 0 3px,rgba(0,0,0,.15) 4px)}
+.topbar{height:58px;background:#101522;color:white;display:flex;align-items:center;justify-content:space-between;padding:0 max(5vw,18px);font-family:"Press Start 2P",monospace;font-size:10px;position:relative;z-index:2}
+.brand{color:white;text-decoration:none;display:flex;align-items:center;gap:10px}.brand-mark{display:grid;place-items:center;background:#fff;color:var(--blue);width:30px;height:30px;border:2px solid #9eb5ff;box-shadow:3px 3px 0 #627ec9;font-size:11px}
+.top-status{color:#b9c8ff;font-size:8px}.status-dot{display:inline-block;width:8px;height:8px;background:#5ce08a;border-radius:50%;margin-right:7px;box-shadow:0 0 8px #5ce08a}.top-divider{padding:0 9px;color:#7183c0}
+main{max-width:1100px;margin:auto;padding:0 22px}
+.hero{min-height:620px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:28px;position:relative;padding:76px 0 48px}
+.loading-widget{position:absolute;top:26px;left:0;width:210px;padding:8px;background:#f8f7ed;text-align:center}
+.pixel-border{border:3px solid var(--blue);box-shadow:inset 2px 2px #fff,inset -2px -2px #819bdc,4px 4px 0 rgba(22,52,137,.18)}
+.loading-track{height:13px;border:2px solid var(--blue);padding:2px}.loading-track span{display:block;height:100%;width:72%;background:repeating-linear-gradient(90deg,var(--blue) 0 9px,#6d8de7 9px 12px);animation:load 2.5s ease-in-out infinite alternate}.loading-label{font-family:"Press Start 2P";font-size:7px;margin-top:7px;color:var(--blue)}
+@keyframes load{from{width:18%}to{width:92%}}
+.eyebrow{font-family:"Press Start 2P",monospace;font-size:8px;line-height:1.8;color:var(--blue);letter-spacing:.3px}
+h1,h2,h3{font-family:"Press Start 2P",monospace;line-height:1.55}h1{font-size:clamp(24px,4vw,43px);margin:12px 0;color:#18234b}h1 span{color:var(--blue);text-shadow:3px 3px 0 #b7c6f5}
+.hero-description{font-size:27px;max-width:470px;line-height:1.15;color:#46527a}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.retro-button{border:2px solid var(--blue);background:#f9f8ee;color:var(--blue);padding:10px 15px;box-shadow:inset 2px 2px white,inset -2px -2px #9aabe0,3px 3px 0 #a9b6dc;font-family:"Press Start 2P";font-size:8px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:42px;transition:transform .12s,box-shadow .12s}
+.retro-button:hover{transform:translate(2px,2px);box-shadow:inset 2px 2px white,inset -2px -2px #9aabe0,1px 1px 0 #a9b6dc}
+.retro-button.primary{background:var(--blue);color:white;box-shadow:inset 2px 2px #7794ee,inset -2px -2px #092b8d,3px 3px 0 #a9b6dc}
+.hero-art{height:430px;position:relative;display:flex;align-items:center;justify-content:center}
+.globe{position:absolute;right:3%;top:2%;font-size:92px;filter:drop-shadow(3px 4px 0 #1b49bd);opacity:.9}
+.monitor{position:relative;width:94%;max-width:490px;height:300px;background:var(--blue);padding:9px;border:3px solid #092d9b;box-shadow:9px 10px 0 rgba(17,46,132,.18);transform:rotate(-2deg);z-index:1}
+.monitor-bar{height:29px;color:white;font-family:"Press Start 2P";font-size:8px;display:flex;align-items:center;justify-content:space-between;padding:0 5px}
+.window-controls{display:flex;gap:4px}.window-controls i{font-style:normal;background:#e9eafa;color:var(--blue);width:17px;height:17px;display:grid;place-items:center;font-size:13px}
+.monitor-screen{height:calc(100% - 29px);position:relative;overflow:hidden;background:linear-gradient(#b8e1ef 0 45%,#6aa7d0 45% 100%)}
+.screen-sun{position:absolute;right:12%;top:12%;width:55px;height:55px;background:#ffdc66;border-radius:50%;box-shadow:0 0 0 8px rgba(255,255,255,.2)}
+.screen-hill{position:absolute;bottom:-55px;width:120%;height:190px;border-radius:50% 50% 0 0}.hill-back{background:#4c8d9e;left:-20%;transform:rotate(-9deg)}.hill-front{background:#34754d;right:-28%;bottom:-100px;transform:rotate(10deg)}
+.screen-copy{position:absolute;top:19%;left:8%;z-index:2;display:flex;flex-direction:column;color:#fff;text-shadow:2px 2px #153e9e}.tiny-label{font-family:"Press Start 2P";font-size:7px}.screen-copy strong{font-family:"Press Start 2P";font-size:clamp(18px,3vw,30px);line-height:1.55;margin:12px 0}.screen-copy small{font-family:"Press Start 2P";font-size:6px}.blink{animation:blink 1s steps(2) infinite}@keyframes blink{50%{opacity:0}}
+.desktop-icon{position:absolute;right:8%;bottom:12%;z-index:3;color:white;font-size:28px;text-align:center;text-shadow:2px 2px var(--blue)}.desktop-icon small{display:block;font-size:14px}
+.popup{position:absolute;z-index:4;bottom:0;left:-2%;width:min(370px,90%);background:#f8f7e9;padding:3px;transform:rotate(1deg)}
+.popup-title,.window-title{background:var(--blue);color:white;font-family:"Press Start 2P";font-size:8px;padding:9px;display:flex;justify-content:space-between;align-items:center}
+.fake-close,.window-close{border:1px solid white;background:#e9edff;color:var(--blue);font-size:16px;line-height:16px;width:22px;height:22px}
+.popup-content{display:flex;gap:12px;align-items:center;padding:12px 10px 5px}.popup-content p{font-size:21px;line-height:1.05;margin:0}.popup-icon{background:var(--blue);color:white;border-radius:50%;font:bold 18px Georgia;width:24px;height:24px;display:grid;place-items:center;flex-shrink:0}
+.popup .retro-button{margin:5px 10px 10px;font-size:7px;min-height:34px}
+.cursor{position:absolute;right:2%;bottom:19%;font-size:49px;color:white;text-shadow:2px 2px var(--blue);z-index:5;transform:rotate(-25deg)}
+.pixel-spark{position:absolute;color:#e4b82d;font-size:42px}.spark-one{left:1%;top:29%}.spark-two{right:3%;bottom:19%}
+.quick-nav{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;border-top:2px dashed #aab7df;border-bottom:2px dashed #aab7df;padding:18px 0}
+.shortcut{background:transparent;border:0;color:var(--blue);display:flex;align-items:center;gap:9px;text-align:left;font-size:20px}.shortcut:hover span:last-child{text-decoration:underline}.shortcut-icon{font-size:25px}
+.section-heading{text-align:center;padding:65px 0 25px}.section-heading h2{font-size:clamp(16px,3vw,24px);margin:10px 0}.section-heading p{color:#667092;margin:0}
+.folder-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.folder-card{border:2px solid var(--blue);background:rgba(255,255,255,.55);box-shadow:inset 2px 2px white,inset -2px -2px #aab9e6,4px 4px 0 #c2cbe4;padding:17px 13px;text-align:left;color:var(--ink);display:flex;flex-direction:column;align-items:flex-start;gap:7px;min-height:155px}
+.folder-card:hover{background:#e2e9ff;transform:translateY(-3px)}.folder-emoji{font-size:30px}.folder-card strong{font-family:"Press Start 2P";font-size:9px;line-height:1.7}.folder-card small{font-size:18px;color:#647095}.folder-arrow{font-family:"Press Start 2P";font-size:7px;color:var(--blue);margin-top:auto}
+.system-note{display:flex;align-items:center;gap:14px;background:#f8f7eb;margin:38px 0 70px;padding:12px 17px}.system-note p{font-size:20px;margin:0;line-height:1.2}.note-icon{color:#d7a91c;font-size:26px}
+.taskbar{height:54px;position:fixed;z-index:30;bottom:0;left:0;right:0;background:#153da9;border-top:3px solid #7192ef;display:flex;align-items:center;padding:5px 12px;gap:12px;color:white;box-shadow:0 -3px 10px #243d8a33}
+.start-button{background:#f1f0e6;color:#173b9c;text-decoration:none;border:2px solid white;box-shadow:inset 2px 2px white,inset -2px -2px #9daedb;padding:5px 12px;font-family:"Press Start 2P";font-size:9px;height:37px;display:flex;align-items:center;gap:7px}.start-button span{font-size:18px}
+.taskbar-app{border-left:1px solid #91a7ec;padding-left:12px;font-size:19px;flex:1}.mini-app-icon{display:inline-grid;place-items:center;background:white;color:var(--blue);font-family:"Press Start 2P";font-size:8px;width:22px;height:22px;margin-right:6px}.taskbar-clock{border:1px solid #8da5ed;padding:5px 10px;font-size:19px}
+.window-layer{position:fixed;inset:0;z-index:25;pointer-events:none}
+.retro-window{pointer-events:auto;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:min(490px,calc(100vw - 28px));background:#f5f3e5;border:3px solid var(--blue);padding:4px;box-shadow:8px 9px 0 #0b2c9160,0 0 0 999px #111a3d55}
+.retro-window[hidden]{display:none}.window-title{cursor:move}.window-body{padding:20px 17px;color:#34436f}.window-body h3{font-size:14px;color:#192c69;margin:7px 0 14px}.window-body p{line-height:1.2}.about-body{display:grid;grid-template-columns:90px 1fr;gap:17px;align-items:start}.profile-stamp{height:90px;background:#dce5ff;border:3px solid var(--blue);display:grid;place-items:center;font-family:"Press Start 2P";font-size:24px;color:var(--blue);box-shadow:inset 3px 3px white,inset -3px -3px #9cafe6}
+.wide-window{width:min(570px,calc(100vw - 28px))}.project-list{border-top:1px solid #a8b8e8}.project-item{display:flex;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px dashed #9eaddc}.project-item>span{font-family:"Press Start 2P";font-size:9px;color:var(--blue)}.project-item div{display:flex;flex-direction:column;flex:1}.project-item b{font-size:22px}.project-item small{font-size:17px;color:#6a7698}.project-item em{font-style:normal;font-family:"Press Start 2P";font-size:7px;color:var(--green)}
+.skill-row{display:grid;grid-template-columns:95px 1fr;align-items:center;gap:10px;margin:13px 0}.skill-row>span{font-size:20px}.skill-row div{height:15px;border:2px solid var(--blue);padding:2px}.skill-row i{display:block;height:100%;background:repeating-linear-gradient(90deg,#2350c6 0 8px,#7391e8 8px 11px)}
+.small-hint{font-size:16px;color:#7781a0}.link-button{margin-top:8px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:83px;gap:4px}.hero-intro{order:1}.hero-art{order:2;height:350px;margin-top:4px}.hero{min-height:0}.monitor{height:260px;width:94%}.popup{left:0;bottom:-4px}.globe{font-size:70px}.quick-nav{grid-template-columns:repeat(2,1fr);gap:15px}.folder-grid{grid-template-columns:repeat(2,1fr)}.section-heading{padding-top:48px}.top-status{font-size:7px}.hero-description{max-width:100%}}
+@media(max-width:390px){.topbar{padding:0 12px}.top-status{font-size:6px}.hero-art{height:315px}.monitor{height:230px}.popup{width:95%}.folder-card{min-height:145px;padding:12px 9px}.folder-card strong{font-size:8px}.taskbar{padding:5px 7px;gap:7px}.start-button{font-size:7px;padding:4px 7px}.taskbar-app{font-size:16px;padding-left:7px}.taskbar-clock{font-size:16px;padding:4px 6px}.about-body{grid-template-columns:65px 1fr;gap:10px}.profile-stamp{height:65px;font-size:18px}}
